@@ -3,10 +3,10 @@ services:
   php:
     build:
       context: .
-      dockerfile: docker-compose.php.dockerfile
+      dockerfile: php.dockerfile
     volumes:
       - ./:/var/www
-      - ./docker-compose.httpd.conf:/etc/apache2/httpd.conf
+      - ./docker-httpd.conf:/etc/apache2/httpd.conf
     working_dir: /var/www
     environment:
       #YOU ARE SUPPOSED TO BE ABLE TO USE host.docker.internal FOR remote_host BUT IF IT
